@@ -39,5 +39,21 @@ public class PhoneBookService
 
         return response;
     }
+
+    public bool DeletePhoneBook(string phoneNumber)
+    {
+        bool response = false;
+        foreach (PhoneBook phoneBook in phoneBooks)
+        {
+            if (phoneBook.phoneNumber == phoneNumber)
+            {
+                phoneBooks.Remove(phoneBook);
+                response = true;
+                break;
+            }
+        }
+
+        return response;
+    }
 }
 
