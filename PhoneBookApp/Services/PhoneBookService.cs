@@ -23,5 +23,21 @@ public class PhoneBookService
     {
         return phoneBooks;
     }
+
+    public bool UpdatePhoneBook(PhoneBook phoneBook)
+    {
+        bool response = false;
+        foreach (PhoneBook phone in phoneBooks)
+        {
+            if (phoneBook.phoneNumber == phone.phoneNumber)
+            {
+                phone.name = phoneBook.name;
+                response = true;
+                break;
+            }
+        }
+
+        return response;
+    }
 }
 
