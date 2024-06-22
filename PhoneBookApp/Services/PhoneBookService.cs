@@ -19,4 +19,9 @@ public class PhoneBookService
         phoneBooks.Add(phoneBook);
         return true;
     }
+    public List<PhoneBook> GetAllPhoneBooks()
+    {
+        return phoneBooks;
+    }
 }
+
