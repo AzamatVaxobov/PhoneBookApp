@@ -70,7 +70,12 @@ internal class Program
                 if (response) Console.WriteLine("Deleted");
                 else Console.WriteLine("There is no to delete");
             }
-            Console.ReadKey();
+            string option;
+            Console.Write("Do you want to continue   Y/N :");
+            option = Console.ReadLine();
+            string[] options = { "Yes", "Y", "yes", "YES", "y" };
+            bool check = options.Any(o => o == option);
+            if (!check) break;
         }
     }
 
