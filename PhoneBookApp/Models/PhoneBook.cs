@@ -2,6 +2,6 @@
 
 public class PhoneBook
 {
-    public string phoneNumber;
-    public string name;
+    public string PhoneNumber { get; set; }
+    public string Name { get; set; }
 }

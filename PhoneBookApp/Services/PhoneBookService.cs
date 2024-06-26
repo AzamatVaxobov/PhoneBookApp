@@ -4,14 +4,14 @@ namespace PhoneBookApp.Services;
 
 public class PhoneBookService
 {
-    public List<PhoneBook> phoneBooks = new List<PhoneBook>();
+    private List<PhoneBook> phoneBooks = new List<PhoneBook>();
 
     //crud
     public bool CreatePhoneBook(PhoneBook phoneBook)
     {
         foreach (PhoneBook phone in phoneBooks)
         {
-            if (phoneBook.phoneNumber == phone.phoneNumber)
+            if (phoneBook.PhoneNumber == phone.PhoneNumber)
             {
                 return false;
             }
@@ -24,14 +24,15 @@ public class PhoneBookService
         return phoneBooks;
     }
 
-    public bool UpdatePhoneBook(PhoneBook phoneBook)
+    
+        public bool UpdatePhoneBook(PhoneBook phoneBook)
     {
         bool response = false;
         foreach (PhoneBook phone in phoneBooks)
         {
-            if (phoneBook.phoneNumber == phone.phoneNumber)
+            if (phoneBook.PhoneNumber == phone.PhoneNumber)
             {
-                phone.name = phoneBook.name;
+                phone.Name = phoneBook.Name;
                 response = true;
                 break;
             }
@@ -45,7 +46,7 @@ public class PhoneBookService
         bool response = false;
         foreach (PhoneBook phoneBook in phoneBooks)
         {
-            if (phoneBook.phoneNumber == phoneNumber)
+            if (phoneBook.PhoneNumber == phoneNumber)
             {
                 phoneBooks.Remove(phoneBook);
                 response = true;

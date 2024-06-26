@@ -15,6 +15,7 @@ internal class Program
     static void StartProgramm()
     {
         PhoneBookService phoneBookService = new PhoneBookService();
+        
         PhoneBook phoneBook;
         while (true)
         {
@@ -32,9 +33,9 @@ internal class Program
             {
                 phoneBook = new PhoneBook();
                 Console.Write("Enter name : ");
-                phoneBook.name = Console.ReadLine();
+                phoneBook.Name = Console.ReadLine();
                 Console.Write("Enter phone number : ");
-                phoneBook.phoneNumber = Console.ReadLine();
+                phoneBook.PhoneNumber = Console.ReadLine();
 
                 bool response = phoneBookService.CreatePhoneBook(phoneBook);
                 if (response) Console.WriteLine("Added");
@@ -45,16 +46,16 @@ internal class Program
                 List<PhoneBook> all = phoneBookService.GetAllPhoneBooks();
                 foreach (PhoneBook phone in all)
                 {
-                    Console.WriteLine($"Name : {phone.name}, number : {phone.phoneNumber}  ");
+                    Console.WriteLine($"Name : {phone.Name}, number : {phone.PhoneNumber}  ");
                 }
             }
             if (choice == "3")
             {
                 phoneBook = new PhoneBook();
                 Console.Write("Enter new name : ");
-                phoneBook.name = Console.ReadLine();
+                phoneBook.Name = Console.ReadLine();
                 Console.Write("Enter phone number : ");
-                phoneBook.phoneNumber = Console.ReadLine();
+                phoneBook.PhoneNumber = Console.ReadLine();
 
                 bool response = phoneBookService.UpdatePhoneBook(phoneBook);
                 if (response) Console.WriteLine("Updated");
